@@ -20,7 +20,7 @@
 우선 모듈이 없는 애플리케이션을 하나 만들어보자.
 파일의 이름은 main.html 이다.
 
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,7 +47,7 @@
 자바스크립트 파일은 확장자로 js를 사용한다.
 
 ### greeting.js
-```
+```javascript
 function welcome(){
     return 'Hello world';
 }
@@ -55,7 +55,7 @@ function welcome(){
 main.html의 내용을 다음과 같이 변경한다.
 
 ### main.html
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -88,7 +88,7 @@ greeting.js에는 함수 welcome가 정의되어 있기 때문에 main.html 안�
 Node.js에서는 아래와 같은 방법으로 모듈을 로드한다.
 
 ### node.circle.js (로드될 대상)
-```
+```javascript
 var PI = Math.PI;
   
 exports.area = function (r) {
@@ -101,13 +101,13 @@ return 2 * PI * r;
 ```
 
 ### node.demo.js (로드의 주체)
-```
+```javascript
 var circle = require('./node.circle.js');
 console.log( 'The area of a circle of radius 4 is '
            + circle.area(4));
 ```
 아래는 실행방법과 실행 결과다.
-```
+```node
 F:\BitNami\wampstack-5.4.22-0\apache2\htdocs\javascript\module>node node.demo.js
 The area of a circle of radius 4 is 50.26548245743669
 ```
@@ -130,7 +130,7 @@ http://api.jquery.com/
 
 아래는 jQuery를 이용한 예제이다.
 
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -155,7 +155,7 @@ http://api.jquery.com/
 
 다음은 jQuery를 이용하지 않고 동일한 기능을 구현한 예제이다.
 
-```
+```html
 <!DOCTYPE html>
 <html>
 <body>
