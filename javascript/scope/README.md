@@ -3,7 +3,7 @@
 아래의 예제를 보자. 
 결과는 global이다.
 
-```javascrpit
+```javascript
 var vscope = 'global';
 function fscope(){
     alert(vscope);
@@ -18,7 +18,7 @@ fscope();
 아래 예제를 보자. 
 결과는 '함수안 local'과 '함수밖 global'이 출력된다.
 
-```javascrpit
+```javascript
 var vscope = 'global';
 function fscope(){
     var vscope = 'local';
@@ -34,7 +34,7 @@ alert('함수밖 '+vscope);
 아래 예제를 보자. 
 결과는 모두 local이다.
 
-```javascrpit
+```javascript
 var vscope = 'global';
 function fscope(){
     vscope = 'local';
@@ -64,7 +64,7 @@ var을 쓰는 것과 쓰지 않는 것의 차이를 이해해야 한다.
 전역변수는 각기 다른 로직에서 사용하는 같은 이름의 변수값을 변경시켜서 의도하지 않은 문제를 발생시킨다.
 
 ### 지역변수의 사용
-```javascrpit
+```javascript
 function a (){
     var i = 0;
 }
@@ -82,7 +82,7 @@ for(var i = 0; i < 5; i++){
 ### 전역변수의 사용
 본 예제는 무한반복을 발생시킨다. 
 
-```javascrpit
+```javascript
 function a (){
     i = 0;
 }
@@ -95,7 +95,7 @@ for(i = 0; i < 5; i++){
 ## 전역변수의 사용
 불가피하게 전역변수를 사용해야 하는 경우는 하나의 객체를 전역변수로 만들고 객체의 속성으로 변수를 관리하는 방법을 사용한다.
 
-```javascrpit
+```javascript
 MYAPP = {}
 MYAPP.calculator = {
     'left' : null,
@@ -116,7 +116,7 @@ document.write(sum());
 
 전역변수를 사용하고 싶지 않다면 아래와 같이 익명함수를 호출함으로서 이러한 목적을 달성할 수 있다.
 
-```javascrpit
+```javascript
 (function(){
     var MYAPP = {}
     MYAPP.calculator = {
@@ -143,7 +143,7 @@ document.write(sum());
 많은 언어들이 블록(대체로 {,})에 대한 유효범위를 제공하는 것과 다른 점이다. 
 아래 예제의 결과는 coding everybody이다.
 
-```javascrpit
+```javascript
 for(var i = 0; i < 1; i++){
     var name = 'coding everybody';
 }
@@ -153,7 +153,7 @@ alert(name);
 자바에서는 아래의 코드는 허용되지 않는다. 
 name은 지역변수로 for 문 안에서 선언 되었는데 이를 for문 밖에서 호출하고 있기 때문이다.
 
-```javascrpit
+```javascript
 for(int i = 0; i < 10; i++){
     String name = "egoing";
 }
@@ -165,7 +165,7 @@ System.out.println(name);
 ## 정적 유효범위
 자바스크립트는 함수가 선언된 시점에서의 유효범위를 갖는다. 이러한 유효범위의 방식을 정적 유효범위(static scoping), 혹은 렉시컬(lexical scoping)이라고 한다. 
 
-```javascrpit
+```javascript
 var i = 5;
  
 function a(){
