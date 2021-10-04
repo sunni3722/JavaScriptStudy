@@ -22,12 +22,12 @@
 a라는 텍스트를 찾아내는 정규표현식을 만들어보자.
 
 ### 정규표현식 리터럴
-```javascrpit
+```javascript
 var pattern = /a/
 ```
 
 ### 정규표현식 객체 생성자
-```javascrpit
+```javascript
 var pattern = new RegExp('a');
 ```
 
@@ -37,18 +37,18 @@ var pattern = new RegExp('a');
 정규표현식을 컴파일해서 객체를 만들었다면 이제 문자열에서 원하는 문자를 찾아내야 한다. 
 
 ### RegExp.exec()
-```javascrpit
+```javascript
 console.log(pattern.exec('abcdef')); // ["a"]
 ```
 실행결과는 문자열 a를 값으로 하는 배열을 리턴한다.
-```javascrpit
+```javascript
 console.log(pattern.exec('bcdefg')); // null
 ```
 인자 'bcdef'에는 a가 없기 때문에 null을 리턴한다.
 
 ### RegExp.test()
 test는 인자 안에 패턴에 해당되는 문자열이 있으면 true, 없으면 false를 리턴한다.
-```javascrpit
+```javascript
 console.log(pattern.test('abcdef')); // true
 cnosole.log(pattern.test('bcdefg')); // false
 ```
@@ -58,14 +58,14 @@ cnosole.log(pattern.test('bcdefg')); // false
 
 ### String.match()
 RegExp.exec()와 비슷하다.
-```javascrpit
+```javascript
 console.log('abcdef'.match(pattern)); // ["a"]
 console.log('bcdefg'.match(pattern)); // null
 ```
 
 ### String.replace()
 문자열에서 패턴을 검색해서 이를 변경한 후에 변경된 값을 리턴한다.
-```javascrpit
+```javascript
 console.log('abcdef'.replace(pattern, 'A'));  // Abcdef
 ```
 
@@ -74,7 +74,7 @@ console.log('abcdef'.replace(pattern, 'A'));  // Abcdef
 
 ### i
 i를 붙이면 대소문자를 구분하지 않다.
-```javascrpit
+```javascript
 var xi = /a/;
 console.log("Abcde".match(xi)); // null
 var oi = /a/i;
@@ -83,7 +83,7 @@ console.log("Abcde".match(oi)); // ["A"];
 
 ### g
 g를 붙이면 검색된 모든 결과를 리턴한다.
-```javascrpit
+```javascript
 var xg = /a/;
 console.log("abcdea".match(xg));
 var og = /a/g;
@@ -95,7 +95,7 @@ console.log("abcdea".match(og));
 ### 캡처
 괄호안의 패턴은 마치 변수처럼 재사용할 수 있다. 
 이 때 기호 $를 사용하는데 아래 코드는 coding과 everybody의 순서를 역전시킨다.
-```javascrpit
+```javascript
 var pattern = /(\w+)\s(\w+)/;
 var str = "coding everybody";
 var result = str.replace(pattern, "$2, $1");
@@ -104,7 +104,7 @@ console.log(result);
 
 ### 치환
 아래 코드는 본문 중의 URL을 링크 html 태그로 교체한다. 
-```javascrpit
+```javascript
 var urlPattern = /\b(?:https?):\/\/[a-z0-9-+&@#\/%?=~_|!:,.;]*/gim;
 var content = '생활코딩 : http://opentutorials.org/course/1 입니다. 네이버 : http://naver.com 입니다. ';
 var result = content.replace(urlPattern, function(url){
@@ -115,7 +115,7 @@ console.log(result);
 
 아래 코드는 본문 중의 URL을 링크 html 태그로 교체한다.
 
-```javascrpit
+```javascript
 생활코딩 : <a href="http://opentutorials.org/course/1">http://opentutorials.org/course/1</a> 입니다. 네이버 : <a href="http://naver.com">http://naver.com</a> 입니다.
 ```
 
