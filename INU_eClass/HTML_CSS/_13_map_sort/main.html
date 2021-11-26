@@ -1,0 +1,59 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            // 배열
+            // 1. fill  --> 채운다.
+            // const a = Array(10).fill(0)
+            // 2. map   --> [1, 2, 3, 4, ..., 10]
+            // const b = a.map( (_elem, _idx) => {return _idx+1} )
+            // console.log('a is: '+a)
+            // console.log('b is: '+b)
+
+            // 3. sort
+            // const c = [45, 33, 22, 11, 7, 99]
+            // console.log('c is: '+c)
+
+            // c.sort( (a, b) => {
+            //     if (a < b) {
+            //         return -1;  // negative
+            //     }
+            //     else if (a > b) {
+            //         return 1;   // positive
+            //     }
+            //     else {
+            //         return 0;   //  zero
+            //     }
+            // } )
+
+            // console.log('after sorting c is: '+c)
+
+            // 4. 복사본 만들어서 sort  --> slice
+            // [1, 2, 3]
+            // slice(1)     --> [2, 3]
+            // slice(0, 1)  --> [1]
+            // slice()      --> 전체 복사
+
+            // const sc = c.slice().sort( (a, b) => {
+            //     if (a < b) {
+            //         return -1;  // negative
+            //     }
+            //     else if (a > b) {
+            //         return 1;   // positive
+            //     }
+            //     else {
+            //         return 0;   //  zero
+            //     }
+            // } )
+
+            // 오름차순
+            // const sc = c.slice().sort( (a, b) => a - b )
+            // 내림차순
+            // const sc = c.slice().sort( (a, b) => b - c )
+
+            // console.log('after sorting c is: '+c)
+            // console.log('sc is: '+sc)
+        </script>
+    </body>
+</html>
