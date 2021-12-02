@@ -2,14 +2,58 @@
     <head>
     </head>
     <body>
+
+        <div>
+            <h1 id='count_down'></h1>
+        </div>
+
         <script>
+
+            let timer = 10
+            const _id = setInterval(()=>{
+                const cp_h1 = document.querySelector('#count_down')
+                cp_h1.textContent = timer
+                timer = timer - 1
+                if (timer < 0) {
+                    clearInterval(_id)
+                    cp_h1.textContent = 'Done'
+                } 
+            }, 1000)
+
+
+            // setTimeout vs setInterval
+
+            // setTimeout : 일정 시간 후에 실행, 1번만
+
+            // const hello = ()=>{console.log('안녕')}
+
+            // setTimeout(hello, 3000)     // ms, 1/1000초 후에 실행
+            // setTimeout(hello(), 3000)   // undefined
+
+            // setTimeout(()=>{console.log('화살함수, 안녕')}, 3000)
+
+            // setInterval : 일정 주기로 실행
+            // clearInterval : 주기함수를 종료
+            // _id = setInterval()
+            // clearInterval(_id)
+
+            // const _id = setInterval(hello, 1000)
+            // setTimeout(()=>{
+            //     clearInterval(_id)
+            //     console.log('clearInterval 호출되었음')
+            // }, 5000)
+
+
             // 배열
             // 1. fill  --> 채운다.
             // const a = Array(10).fill(0)
+
+
             // 2. map   --> [1, 2, 3, 4, ..., 10]
             // const b = a.map( (_elem, _idx) => {return _idx+1} )
             // console.log('a is: '+a)
             // console.log('b is: '+b)
+
 
             // 3. sort
             // const c = [45, 33, 22, 11, 7, 99]
@@ -28,6 +72,7 @@
             // } )
 
             // console.log('after sorting c is: '+c)
+
 
             // 4. 복사본 만들어서 sort  --> slice
             // [1, 2, 3]
@@ -54,6 +99,42 @@
 
             // console.log('after sorting c is: '+c)
             // console.log('sc is: '+sc)
+
+
+            // 5. 문자열 정렬
+            // const d = ['banana', 'apple', 'orange']
+            // const d = ['호박', '수박', '사과', '포도']
+            // const d = ['호박', '수박', '사과', '포도', 'banana', 'apple', 'orange']
+
+            // const sd = d.slice().sort((a, b)=>{return (a < b) ? -1: (a > b) ? 1: 0})
+            // const sd = d.slice().sort((a, b)=>(a < b) ? -1: (a > b) ? 1: 0)
+            // const sd = d.slice().sort((a, b)=>a.localeCompare(b))
+
+            // const sd = d.slice().sort((a, b)=>{
+            //     if (a < b) {
+            //         return -1;
+            //     }
+            //     else if (a > b) {
+            //         return 1;
+            //      }
+            //     else {
+            //         return 0;
+            //     }
+            // })
+
+            // console.log('d : '+d)
+            // console.log('sd : '+sd)
+
+            // 6. localeCompare
+            // const d = ['abc', 'Abc', '포도', 'zac', 'Zac']
+
+            // const sd1 = d.slice().sort((a, b)=>(a < b) ? -1: (a > b) ? 1: 0)
+            // const sd2 = d.slice().sort((a, b)=>a.localeCompare(b, {'sensitivity':'base'}))
+
+            // console.log('d : '+d)
+            // console.log('sd1 : '+sd1)
+            // console.log('sd2 : '+sd2)
+
         </script>
     </body>
 </html>
