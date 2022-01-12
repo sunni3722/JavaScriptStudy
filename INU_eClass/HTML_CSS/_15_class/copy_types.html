@@ -1,0 +1,71 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            let a = 1
+            let b = a
+            b = 10
+    
+            console.log(`a is ${a}`)
+            console.log(`b is ${b}`)
+
+
+            // object : key, value
+            const a = {'name':'alice', 'age':20}
+            const b = a
+            // let b = a
+            const c = {'name':'join', 'age':21}
+
+            console.log('before ', a)
+
+            b.name = 'tom'
+            // b = c
+
+            // b['name']
+            console.log('after  ', a)
+
+            // const a = [1, 2, 3]
+            // const b = a  // ref
+            // console.log('before ', a)
+            // b[1] = 200
+            // console.log('after  ', a)
+            // a.forEach((v, idx) => {
+            //     console.log(`${idx} : ${v}`)
+            // });
+
+
+            const a = [1, 2, 3]
+            const b = [...a]    // copy
+            b[1] = 200
+            console.log(a)
+
+            const a = {
+                name : 'john',
+                'age' : 20,
+                address : {
+                    city : 'incheon',
+                    street : 10
+                }
+            }
+            console.log('a : ', a.name, a['age'], a.address.city, a.address.street)
+            
+            // Shallow Copy 얕은 복사
+            const b = Object.assign({}, a)  
+
+            // Deep Copy    깊은 복사
+            const b = JSON.parse(JSON.stringify(a))
+
+            b.name = 'alice'
+            a.address.city = 'seoul'
+
+            console.log('after-----------------')
+            console.log('a : ', a.name, a['age'], a.address.city, a.address.street)
+            console.log('b : ', b.name, b['age'], b.address.city, b.address.street)
+
+
+
+        </script>
+    </body>
+</html>
